@@ -4,7 +4,7 @@
   box-sizing: border-box;
   height: 100px;
   padding: 20px;
-  background-color: #18191b;
+  background-color: #111113;
   border-bottom: 1px solid #363a3f;
   align-items: center;
 }
@@ -47,14 +47,14 @@
   border: 1px solid #363a3f;
   border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: #363a3f 0.2s, box-shadow 0.2s;
 }
 .blog-header__search--inp::placeholder {
   color: #b0b4ba;
   opacity: 1;
 }
 .blog-header__search--inp:focus {
-  background-color: #212225;
+  background-color: #111113;
   color: #edeef0;
   border-color: #70b8ff;
   outline: none;
@@ -73,6 +73,8 @@
   display: inline-block;
   width: 80px;
   height: 40px;
+  border: none;
+  padding: 0;
   background-color: #70b8ff;
   text-align: center;
   line-height: 40px;
@@ -236,6 +238,17 @@ main {
 }
 .blog-article__item--actions button:hover {
   color: #70b8ff;
+}
+.modal-content {
+  background-color: #18191b;
+}
+.form-control {
+  background-color: #18191b;
+  border: 1px solid #363a3f;
+}
+.modal-footer .btn {
+  background-color: #70b8ff;
+  color: #333;
 }
 body {
   background-color: #111113;

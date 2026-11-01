@@ -1,3 +1,5 @@
+@import "./_variables.styl"
+
 /*header start*/
 .blog-header 
   display: grid
@@ -5,8 +7,8 @@
   box-sizing: border-box
   height: 100px
   padding: 20px
-  background-color: #18191B
-  border-bottom: 1px solid #363A3F
+  background-color: bgc-color
+  border-bottom: 1px solid border-color
   align-items: center
 
 
@@ -32,7 +34,7 @@
 
 .blog-header__nav li a 
   font-size: 20px
-  color: #B0B4BA
+  color: text-color
   text-decoration: none
   line-height: 60px
 
@@ -49,25 +51,25 @@
   min-width: 0
   height: 44px
   padding: 0 14px
-  background-color: #212225
-  color: #EDEEF0
-  border: 1px solid #363A3F
+  background-color: hover-color
+  color: title-color
+  border: 1px solid border-color
   border-radius: 8px
   font-size: 16px
   transition: border-color 0.2s, box-shadow 0.2s
 
 
 .blog-header__search--inp::placeholder 
-  color: #B0B4BA
+  color: text-color
   opacity: 1
 
 
 .blog-header__search--inp:focus 
-  background-color: #212225
-  color: #EDEEF0
-  border-color: #70B8FF
+  background-color: bgc-color
+  color: title-color
+  border-color: but-color
   outline: none
-  box-shadow: 0 0 0 1px #70B8FF
+  box-shadow: 0 0 0 1px but-color
 
 
 .blog-header__search--but 
@@ -84,13 +86,15 @@
   display: inline-block
   width: 80px
   height: 40px
-  background-color: #70B8FF
+  border none
+  padding 0
+  background-color: but-color
   text-align: center
   line-height: 40px
   border-radius: 5px
   font-size: 18px
   font-weight: 500
-  color: #111113
+  color: bgc-color
   margin-right: 5px
   cursor: pointer
   user-select: none

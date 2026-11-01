@@ -9,5 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile-styl": "stylus -w ./styl -o ./public/stylesheets"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "handlebars": "^4.7.10",
+    "validator.tool": "^2.2.6"
   }
 }

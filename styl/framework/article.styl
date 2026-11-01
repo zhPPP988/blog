@@ -1,3 +1,4 @@
+@import "./_variables.styl"
 /*article start*/
 .blog-article
   display flex
@@ -8,8 +9,8 @@
   display grid
   grid-template-columns 1fr 2fr
   width 100%
-  background-color #18191b
-  border 1px solid #363a3f
+  background-color card-color
+  border 1px solid border-color
   border-radius 10px
   overflow hidden
   padding 10px
@@ -17,7 +18,7 @@
   cursor pointer
 
 .blog-article__item:hover
-  background-color #212225
+  background-color hover-color
   transform scale(1.04)
 
 .blog-article__item--img img
@@ -31,12 +32,12 @@
   min-width 0
   
 .blog-article__item--title 
-  color #edeef0
+  color title-color
   font-size 30px
   font-weight 700
 
 .blog-article__item--desc
-  color #b0b4ba
+  color text-color
   text-indent 2em
   margin-top 15px
   p
@@ -54,7 +55,7 @@
   gap 12px
   margin-top auto
   padding-top 16px
-  color #b0b4ba
+  color text-color
   font-size 14px
   line-height 1.5
 
@@ -70,7 +71,7 @@
   padding 4px 0
   border 0
   background transparent
-  color #b0b4ba
+  color text-color
   cursor pointer
 
 .blog-article__item--actions button:hover
