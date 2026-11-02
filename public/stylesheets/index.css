@@ -250,6 +250,21 @@ main {
   background-color: #70b8ff;
   color: #333;
 }
+.login-username-errMsg,
+.login-pwd-errMsg {
+  height: 25px;
+  font-size: 12px;
+  padding-top: 5px;
+  color: #b0b4ba;
+}
+.register-username-errMsg,
+.register-pwd-errMsg,
+.register-confirmPwd-errMsg {
+  height: 25px;
+  font-size: 12px;
+  padding-top: 5px;
+  color: #b0b4ba;
+}
 body {
   background-color: #111113;
 }

@@ -227,13 +227,15 @@
 
           <div class="modal-body">
             <div class="mb-3">
-              <label for="loginUsername" class="form-label">用户名</label>
-              <input type="text" class="form-control" name="username" id="loginUsername" autocomplete="username">
+              <label for="login-username" class="form-label">用户名</label>
+              <input type="text" class="form-control" name="username" id="login-username" autocomplete="username">
+              <div class="login-username-errMsg"></div>
             </div>
 
             <div class="mb-3">
-              <label for="loginPassword" class="form-label">密码</label>
-              <input type="password" class="form-control" name="pwd" id="loginPassword" autocomplete="current-password">
+              <label for="login-pwd" class="form-label">密码</label>
+              <input type="password" class="form-control" name="pwd" id="login-pwd" autocomplete="current-password">
+              <div class="login-pwd-errMsg"></div>
             </div>
           </div>
 
@@ -247,7 +249,7 @@
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerTitle" aria-hidden="true"
       data-bs-theme="dark">
       <div class="modal-dialog modal-dialog-centered">
-        <form class="modal-content" id="registrForm" action="javascript:;">
+        <form class="modal-content" id="registerForm" action="javascript:;">
 
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="registerTitle">注册</h1>
@@ -256,23 +258,26 @@
 
           <div class="modal-body">
             <div class="mb-3">
-              <label for="registerUsername" class="form-label">用户名</label>
-              <input type="text" class="form-control" id="registerUsername" autocomplete="username"
-                placeholder="6-8位字母数字">
+              <label for="register-username" class="form-label">用户名</label>
+              <input type="text" class="form-control" id="register-username" autocomplete="username"
+                placeholder="6-8位字母数字" name="username">
+              <div class="register-username-errMsg"></div>
             </div>
 
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">密码</label>
-              <input type="password" class="form-control" id="registerPassword" autocomplete="new-password"
+              <label for="register-pwd" class="form-label">密码</label>
+              <input type="password" class="form-control" id="register-pwd" autocomplete="new-password" name="pwd"
                 placeholder="8-12位最少包含一位（数字/大小写字母）">
+              <div class="register-pwd-errMsg"></div>
             </div>
 
             <div class="mb-3">
-              <label for="registerConfirmPassword" class="form-label">
+              <label for="register-confirmPwd" class="form-label">
                 确认密码
               </label>
-              <input type="password" class="form-control" id="registerConfirmPassword" autocomplete="new-password"
-                placeholder="确认密码">
+              <input type="password" class="form-control" id="register-confirmPwd" autocomplete="new-password"
+                placeholder="确认密码" name="confirmPwd">
+              <div class="register-confirmPwd-errMsg"></div>
             </div>
           </div>
 
