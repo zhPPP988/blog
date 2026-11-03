@@ -11,8 +11,10 @@
     "compile-styl": "stylus -w ./styl -o ./public/stylesheets"
   },
   "dependencies": {
+    "axios": "^1.21.0",
     "bootstrap": "^5.3.8",
     "handlebars": "^4.7.10",
+    "node-forge": "^1.4.2",
     "validator.tool": "^2.2.6"
   }
 }
