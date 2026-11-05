@@ -117,4 +117,35 @@
   color: #B0B4BA
   cursor: pointer
   justify-self: self-end
+
+.blog-header__userMsg
+  display flex
+  justify-content center
+  align-items center
+  gap 10px
+  img
+    width 40px
+    height 40px
+    border-radius 50%
+  p
+    line-height 1
+    font-size 22px
+    color text-color
+
+.blog-header__userMsg--avatar
+  position relative;
+  .blog-header__userMsg--write
+    position absolute
+    left 0
+    top 0
+    opacity 0
+    color bgc-color
+    transition .2s linear
+
+.blog-header__userMsg--avatar:hover
+  .blog-header__userMsg--write
+    opacity 1
+    left 50%;
+    top 50%;
+    transform translate(-50%, -50%)
 /*header end*/ 

@@ -1,20 +1,20 @@
 import axios from "../node_modules/axios/dist/esm/axios.js";
 const forge = window.forge;
 
-const BASE_URL = "http://127.0.0.1";
+const BASE_URL = "http://127.0.0.1:3000";
 
 const REQUEST_MAP = {
   login: {
-    withTks: false,
+    withTks: true,
     path: "/login",
     method: "POST",
     rsaName: "pwd",
   },
   register: {
-    withTks: false,
+    withTks: true,
     path: "register",
     method: "POST",
-    rsaName: "pwd",
+    rsaName: "pwd|confirmPwd",
   },
   index: {
     withTks: true,
@@ -23,7 +23,7 @@ const REQUEST_MAP = {
   },
   pubKey: {
     withTks: false,
-    path: "pubKey",
+    path: "getPbk",
     method: "GET",
   },
 };
@@ -43,7 +43,7 @@ export default class Http {
     }
     Object.assign(this, REQUEST_MAP[type]);
     if (this.withTks) {
-      this.request.defaults.headers.common["Authorization"] = "token";
+      this.request.defaults.withCredentials = true;
     }
   }
 
@@ -52,20 +52,22 @@ export default class Http {
     try {
       if (rsaName) {
         let tempForm = { ...data };
-        let pbk = localStorage.getItem("pubKey");
+        let pbk = localStorage.getItem("public_key");
         if (!pbk || pbk == "undefined") {
           pbk = await this.getPubKey();
         }
         if (!pbk || pbk === "undefined") {
           throw new Error("获取公钥失败");
         }
-        tempForm[rsaName] = this.encrypt(
-          localStorage.getItem("pubKey"),
-          tempForm[rsaName],
-        );
+        rsaName.split("|").forEach((item) => {
+          tempForm[item] = this.encrypt(
+            localStorage.getItem("public_key"),
+            tempForm[item],
+          );
+        });
         data = tempForm;
       }
-      let result = await this.request[method.toLowerCase()](path, data);
+      let result = await this.request[method?.toLowerCase()](path, data);
       return result;
     } catch (error) {
       throw new Error(error);
@@ -75,9 +77,9 @@ export default class Http {
   async getPubKey() {
     let key;
     try {
-      let pubKey = await axios.get(BASE_URL + "/getPubKey");
-      key = pubKey.data ;
-      localStorage.setItem("pubKey", key);
+      let pubKey = await axios.get(BASE_URL + "/getPbk");
+      key = pubKey.data;
+      localStorage.setItem("public_key", key);
     } catch (error) {
       console.log(error);
     }

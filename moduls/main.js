@@ -1,21 +1,9 @@
 import Action from "./actionControl.js";
+import Templatehandle from "./templateControl.js";
 
-// function renderErrors(type, errors = {}) {
-//   let form = document.querySelector(`#${type}Form`);
-//   form.querySelectorAll('.form-control[name]').forEach(inp => {
-//     let message = errors[inp.name] || '';
-//     let msgBox = document.querySelector(`.${type}-${inp.name}-errMsg`);
-//     msgBox.textContent = message;
-//     inp.style.border = message ? '1px solid red' : '';
-//   })
-// }
-
-// ['login', 'register'].forEach(item => {
-//   new RegExpVerify(item, () => {
-//     renderErrors(item);
-//   }, (errors) => {
-//     renderErrors(item, errors)
-//   })
-// })
-
+new Templatehandle("headerAccount.hbs", ".blog-header__account", {
+  isLogin: true,
+  avatar: "./public/images/blogLogo.JPG",
+  userName: "会飞的鸟",
+});
 new Action();

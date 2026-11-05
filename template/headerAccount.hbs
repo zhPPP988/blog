@@ -1,0 +1,32 @@
+{{#if isLogin}}
+  <div class="blog-header__userMsg">
+    <div class="blog-header__userMsg--avatar">
+      <a href="javascript:;" data-router="write">
+        <img src="{{avatar}}" alt="!" width="1080" height="1080" />
+        <i class="blog-header__userMsg--write bi bi-pencil-fill"></i>
+      </a>
+    </div>
+    <div class="blog-header__userMsg--userName">
+      <p>{{userName}}</p>
+    </div>
+  </div>
+{{else}}
+  <div class="blog-header__lr">
+    <button
+      type="button"
+      class="blog-header__lr--login"
+      data-bs-toggle="modal"
+      data-bs-target="#loginModal"
+    >
+      登录
+    </button>
+    <button
+      type="button"
+      class="blog-header__lr--regist"
+      data-bs-toggle="modal"
+      data-bs-target="#registerModal"
+    >
+      注册
+    </button>
+  </div>
+{{/if}}

@@ -1,0 +1,155 @@
+@import "./_variables.styl"
+
+/*write begin*/
+.blog-write
+  --w-e-textarea-bg-color card-color
+  --w-e-textarea-color title-color
+  --w-e-textarea-border-color border-color
+  --w-e-textarea-slight-border-color border-color
+  --w-e-textarea-slight-color text-color
+  --w-e-textarea-slight-bg-color hover-color
+  --w-e-textarea-selected-border-color but-color
+  --w-e-textarea-handler-bg-color but-color
+  --w-e-toolbar-color text-color
+  --w-e-toolbar-bg-color card-color
+  --w-e-toolbar-active-color but-color
+  --w-e-toolbar-active-bg-color tag-color
+  --w-e-toolbar-disabled-color #686d75
+  --w-e-toolbar-border-color border-color
+  --w-e-modal-button-bg-color hover-color
+  --w-e-modal-button-border-color border-color
+
+  min-width 0
+  border 1px solid border-color
+  border-radius 10px
+  background-color card-color
+  color text-color
+  transition box-shadow .2s ease
+
+  &:focus-within
+    box-shadow 0 0 0 1px but-color
+
+  #blog-write__toolbar
+    padding 4px 6px
+    border-bottom 1px solid border-color
+    border-radius 10px 10px 0 0
+
+  #blog-write__editor
+    height 60vh
+    min-height 320px
+    border-radius 0 0 10px 10px
+
+  .w-e-toolbar
+    border-radius 10px 10px 0 0
+
+  .w-e-text-container
+    border-radius 0 0 10px 10px
+
+  .w-e-scroll
+    scrollbar-width thin
+    scrollbar-color border-color card-color
+
+  [data-slate-editor]
+    padding 20px 24px
+    font-size 16px
+    line-height 1.8
+    caret-color but-color
+
+    p
+      margin 0 0 12px
+      line-height 1.8
+    h1, h2, h3, h4, h5
+      color title-color
+      font-weight 600
+      line-height 1.4
+    h1
+      font-size 30px
+    h2
+      font-size 26px
+    h3
+      font-size 22px
+    h4, h5
+      font-size 18px
+    strong
+      font-weight 700
+    em
+      font-style italic
+    ul, ol
+      margin 12px 0
+      padding-left 26px
+    ul
+      list-style disc
+    ol
+      list-style decimal
+    a
+      color but-color
+      text-decoration underline
+      text-underline-offset 3px
+    blockquote
+      border-left 3px solid but-color
+      border-radius 0 6px 6px 0
+      color text-color
+    pre > code
+      text-shadow none
+      color title-color
+    th
+      background-color hover-color
+
+  .w-e-text-placeholder
+    top 21px
+    left 24px
+    font-size 16px
+    font-style normal
+    line-height 1.8
+
+  .w-e-bar-item button
+    border-radius 5px
+    transition background-color .15s ease, color .15s ease
+
+    &:hover svg, &.active svg
+      fill but-color
+
+    &:focus-visible
+      outline 1px solid but-color
+      outline-offset 1px
+
+    &.disabled:hover svg
+      fill var(--w-e-toolbar-disabled-color)
+
+  .w-e-hover-bar, .w-e-select-list, .w-e-drop-panel,
+  .w-e-modal, .w-e-bar-item-menus-container
+    border-radius 8px
+    box-shadow 0 8px 24px rgba(0, 0, 0, .3)
+
+  .w-e-select-list ul li
+    border-radius 4px
+
+  .w-e-modal
+    .btn-close
+      background none
+      color text-color
+      opacity 1
+    input[type="text"], input[type="number"], textarea
+      background-color bgc-color
+      color title-color
+      outline none
+      &:focus
+        border-color but-color
+    button:not(.btn-close):hover
+      border-color but-color
+      color but-color
+
+  &.w-e-full-screen-container
+    border-radius 0
+    #blog-write__editor
+      height auto
+      min-height 0
+
+@media (max-width: 767px)
+  .blog-write
+    [data-slate-editor]
+      padding 16px
+    .w-e-text-placeholder
+      top 17px
+      left 16px
+/*write end*/

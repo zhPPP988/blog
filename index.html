@@ -8,17 +8,18 @@
   <link rel="stylesheet" href="public/stylesheets/bootstrap.min.css">
   <link rel="stylesheet" href="public/stylesheets/reset.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="node_modules/@wangeditor/editor/dist/css/style.css">
   <link rel="stylesheet" href="public/stylesheets/index.css">
 </head>
 
-<body>
+<body id="page">
   <header class="blog-header">
     <div class="logo">
       <img src="public/images/blogLogo.JPG" alt="!" width="1080" height="1080">
     </div>
     <nav class="blog-header__nav d-none d-lg-grid">
       <ul>
-        <li><a href="#">首页</a></li>
+        <li><a href="/index" data-router="index">首页</a></li>
         <li><a href="#">文章</a></li>
         <li><a href="#">心得</a></li>
         <li><a href="#">资源</a></li>
@@ -30,13 +31,8 @@
       <input type="text" placeholder="搜索文章" class="blog-header__search--inp">
       <i class="bi bi-search-heart-fill blog-header__search--but"></i>
     </div>
-    <div class="blog-header__lr d-none d-lg-block">
-      <button type="button" class="blog-header__lr--login" data-bs-toggle="modal" data-bs-target="#loginModal">
-        登录
-      </button>
-      <button type="button" class="blog-header__lr--regist" data-bs-toggle="modal" data-bs-target="#registerModal">
-        注册
-      </button>
+    <div class="blog-header__account d-none d-lg-block">
+
     </div>
     <div class="blog-header__moblieList--icon d-block d-lg-none">
       <i class="bi bi-list-ul"></i>
@@ -289,9 +285,12 @@
     </div>
   </main>
   <footer></footer>
-  <script src="./node_modules/node-forge/dist/forge.all.min.js"></script>
-  <script src="public/javascripts/bootstrap.min.js"></script>
+  <script src="node_modules/node-forge/dist/forge.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="node_modules/@wangeditor/editor/dist/index.js"></script>
+  <script src="node_modules/sme-router/index.js"></script>
   <script type="module" src="./moduls/main.js"></script>
 </body>
 
