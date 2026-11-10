@@ -1,0 +1,79 @@
+@import "./_variables.styl"
+/*article start*/
+.blog-article
+  display flex
+  flex-direction column
+  gap 20px
+
+.blog-article__item
+  display grid
+  grid-template-columns 1fr 2fr
+  width 100%
+  background-color card-color
+  border 1px solid border-color
+  border-radius 10px
+  overflow hidden
+  padding 10px
+  transition .2s linear
+  cursor pointer
+
+.blog-article__item:hover
+  background-color hover-color
+  transform scale(1.04)
+
+.blog-article__item--img img
+  width 80%
+  height auto
+  border-radius 20px
+
+.blog-article__item--content
+  display flex
+  flex-direction column
+  min-width 0
+  
+.blog-article__item--title 
+  color title-color
+  font-size 30px
+  font-weight 700
+
+.blog-article__item--desc
+  color text-color
+  text-indent 2em
+  margin-top 15px
+  p
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 3
+    overflow hidden
+    line-height 1.5
+
+.blog-article__item--footer
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap wrap
+  gap 12px
+  margin-top auto
+  padding-top 16px
+  color text-color
+  font-size 14px
+  line-height 1.5
+
+.blog-article__item--actions
+  display flex
+  gap 12px
+  margin-left auto
+
+.blog-article__item--actions button
+  display flex
+  align-items center
+  gap 4px
+  padding 4px 0
+  border 0
+  background transparent
+  color text-color
+  cursor pointer
+
+.blog-article__item--actions button:hover
+  color #70b8ff
+/*article end*/
