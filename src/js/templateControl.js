@@ -4,12 +4,14 @@ import loginTemplate from '../templates/login.hbs'
 import writeTemplate from '../templates/write.hbs'
 import articleTemplate from '../templates/article.hbs'
 import headerAccountTemplate from '../templates/headerAccount.hbs'
+import articlePreviewTemplate from "../templates/articlePreview.hbs"
 
 const templateMap = {
   'login.hbs': loginTemplate,
   'write.hbs': writeTemplate,
   'article.hbs': articleTemplate,
-  'headerAccount.hbs': headerAccountTemplate
+  'headerAccount.hbs': headerAccountTemplate,
+  'articlePreview.hbs': articlePreviewTemplate
 }
 
 export default class Templatehandle {

@@ -1,9 +1,6 @@
 import $ from "jquery";
 import SmeRouter from "sme-router";
-import {
-  createEditor,
-  createToolbar
-} from "@wangeditor/editor";
+import editorControl from "./editorControl.js"
 import Templatehandle from "./templateControl.js";
 const Router = SmeRouter.default || SmeRouter;
 const router = new Router("page", "html5");
@@ -13,6 +10,7 @@ const preIndex = $(".blog-article").html();
 const ROUTER_MAP = {
   "/write": ".blog-article",
   "/index": ".blog-article",
+  "/preview": ".blog-article"
 };
 
 function init(req, res) {
@@ -30,23 +28,22 @@ function init(req, res) {
 // 缓存路由会跳过中间件，因此每次渲染前都重新确定挂载位置。
 router.route("/index", (req, res) => {
   init(req, res);
+  editorControl.destroy();
   res.render(preIndex);
 });
+
+router.route("/preview", (req, res) => {
+  const mount = init(req, res);
+  let data = req.body;
+  editorControl.destroy();
+  new Templatehandle("articlePreview.hbs", mount, { body: data });
+})
 
 router.route("/write", (req, res) => {
   const mount = init(req, res);
   new Templatehandle("write.hbs", mount);
-  const editor = createEditor({
-    selector: "#blog-write__editor",
-    config: {
-      placeholder: "请输入文章内容..."
-    }
-  });
+  editorControl.create();
 
-  createToolbar({
-    editor,
-    selector: "#blog-write__toolbar"
-  });
 });
 
 router.route("*", (req, res) => {
